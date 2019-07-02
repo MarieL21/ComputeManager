@@ -1,2 +1,2 @@
 # ComputeManager
-A class utility that managed GPU-compute initialization routines (available for both CUDA and OpenCL).
+A class utility that manages GPU-compute initialization routines (available for both CUDA and OpenCL).
