@@ -9,16 +9,13 @@
 
 #ifdef PROJ_CUSTOM_LOGGER
 #include "logger.h"
-#endif
-
-#ifndef log_err
+#elif !defined(log_err)
 #include <iostream>
 #define log_err std::cerr
 #define log_endl std::endl
 #define log_inf std::cout
 #define log_wrn std::cout
 #endif
-
 
 /// Check Cuda call status and return it if call failed
 #define CHECK_CUDA(ret) \
