@@ -9,7 +9,9 @@
 
 #ifdef PROJ_CUSTOM_LOGGER
 #include "logger.h"
-#else
+#endif
+
+#ifndef log_err
 #include <iostream>
 #define log_err std::cerr
 #define log_endl std::endl
