@@ -12,7 +12,7 @@
 #define CL_USE_DEPRECATED_OPENCL_1_2_APIS // turns off gcc warnings on
 										  // deprecated api
 
-#ifdef PROJ_CUSTOM_LOGGER
+#ifdef GPU_CUSTOM_LOGGER
 #include "logger.h"
 #elif !defined(log_err)
 #include <iostream>

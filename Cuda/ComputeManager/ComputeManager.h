@@ -7,7 +7,7 @@
 // includes CUDA Runtime
 #include <cuda_runtime.h>
 
-#ifdef PROJ_CUSTOM_LOGGER
+#ifdef GPU_CUSTOM_LOGGER
 #include "logger.h"
 #elif !defined(log_err)
 #include <iostream>
