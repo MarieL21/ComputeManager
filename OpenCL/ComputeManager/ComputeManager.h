@@ -14,13 +14,16 @@
 
 #ifdef GPU_CUSTOM_LOGGER
 #include "logger.h"
-#elif !defined(log_err)
+#else
+#ifndef log_err
 #include <iostream>
 #define log_err std::cerr
 #define log_endl std::endl
 #define log_inf std::cout
 #define log_wrn std::cout
 #endif
+#endif
+
 
 #ifdef WIN32
 #	define WHILE_0\
@@ -90,6 +93,7 @@ public:
 	cl_int SetComputeDevice(ComputeDeviceLib deviceToUse);
 
 	cl_int Initialize() const;
+	bool IsInitialized() const {return m_configuredOpenCL;}	
 	cl_int Release();
 
 	cl_device_id     GetDevice()          const {return m_device;}
