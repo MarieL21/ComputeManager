@@ -9,7 +9,8 @@ int IsValidDevice(int device_id)
 
 ComputeManager::ComputeManager()
 :device_id(cudaInvalidDeviceId),
- sm_count(2)
+ sm_count(2),
+ is_initialized(true)	
 {	
 }
 
@@ -76,8 +77,14 @@ cudaError_t ComputeManager::Initialize() const
 				<< log_endl;
 		sm_count = prop.multiProcessorCount;
 		CHECK_CUDA(cudaSetDevice(device_id));		
-	}	
+	}
+	is_initialized = true;
 	return cudaSuccess;
+}
+
+bool ComputeManager::IsInitialized() const
+{
+	return is_initialized;	
 }
 
 int ComputeManager::GetSmCount() const

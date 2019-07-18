@@ -76,13 +76,16 @@ public:
 	static cudaError_t GetComputeDevices(std::vector<ComputeDeviceLib> &devices);
 	cudaError_t SetComputeDevice(ComputeDeviceLib deviceToUse);
 	cudaError_t Initialize() const;
+	bool IsInitialized() const;
+	
 	int GetSmCount() const;
 	static bool CheckNoErrIsSameAsApi(int app_success);	
   private:
 	cudaError_t ChooseBestDeviceAvailable(int& device_id) const;	
 	
 	mutable int device_id;
-	mutable int sm_count;	
+	mutable int sm_count;
+	mutable bool is_initialized;	
 };
 
 #endif // COMPUTE_MANAGER_CUDA_H_
