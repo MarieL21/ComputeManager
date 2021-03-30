@@ -1,5 +1,9 @@
 #include "ComputeManager.h"
 
+#if (CUDART_VERSION <= 6050)
+int cudaInvalidDeviceId = -1;
+#endif
+
 int GetSPcores(const cudaDeviceProp& devProp);
 
 int IsValidDevice(int device_id)
